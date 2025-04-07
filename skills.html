@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+  <style>
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 40px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+    }
+
+    .category {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    .category.active {
+      display: flex;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .skill-block {
+      background: #ffffff10;
+      padding: 20px;
+      border-radius: 15px;
+      width: 220px;
+      border: 1px solid #4acfee50;
+    }
+
+    .skill-label {
+      color: white;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .skill-bar-container {
+      width: 100%;
+      background: #ffffff10;
+      border: 1px solid #4acfee50;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .skill-bar {
+      height: 20px;
+      background: #4acfee;
+      width: 0;
+      animation: fillBar 2s forwards;
+    }
+
+    @keyframes fillBar {
+      to {
+        width: var(--bar-width);
+      }
+    }
+
+    .arrows {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .arrow-btn {
+      background: #4acfee30;
+      border: none;
+      color: white;
+      font-size: 30px;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .arrow-btn:hover {
+      background: #4acfee;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted plays-inline class="back-vid">
+    <source src="images/galaxy.mp4" type="video/mp4">
+  </video>
+
+  <section class="main-section">
+    <nav>
+      <h1 data-aos="zoom-in"><span style="color: #4acfee;">My</span>Portfolio</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="skills.html">Skills</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero" style="flex-direction: column; align-items: center;">
+      <h2 data-aos="fade-up">My Skills</h2>
+
+      <div class="carousel-container" data-aos="fade-up" data-aos-delay="200">
+        <!-- Category 1 -->
+        <div class="category active">
+          <h3>Web Development</h3>
+          <div class="scroll-container">
+            <div class="skill-block">
+              <div class="skill-label">HTML & CSS</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 95%;"></div></div>
+            </div>
+            <div class="skill-block">
+              <div class="skill-label">JavaScript</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 80%;"></div></div>
+            </div>
+            <div class="skill-block">
+              <div class="skill-label">React</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 60%;"></div></div>
+            </div>
+            <div class="skill-block">
+              <div class="skill-label">UI/UX Design</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 75%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="category">
+          <h3>Programming Languages</h3>
+          <div class="scroll-container">
+            <div class="skill-block">
+              <div class="skill-label">Python</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 90%;"></div></div>
+            </div>
+            <div class="skill-block">
+              <div class="skill-label">Java</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 55%;"></div></div>
+            </div>
+            <div class="skill-block">
+              <div class="skill-label">C++</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 60%;"></div></div>
+            </div>
+            <div class="skill-block">
+              <div class="skill-label">SQL</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="category">
+          <h3>Tools & Software</h3>
+          <div class="scroll-container">
+            <div class="skill-block">
+              <div class="skill-label">Microsoft Office</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 90%;"></div></div>
+            </div>
+            <div class="skill-block">
+              <div class="skill-label">Latex</div>
+              <div class="skill-bar-container"><div class="skill-bar" style="--bar-width: 95%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <div class="arrows">
+          <button class="arrow-btn" onclick="changeCategory(-1)"><i class='bx bx-chevron-left'></i></button>
+          <button class="arrow-btn" onclick="changeCategory(1)"><i class='bx bx-chevron-right'></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    const categories = document.querySelectorAll('.category');
+    let current = 0;
+
+    function changeCategory(dir) {
+      categories[current].classList.remove('active');
+      current = (current + dir + categories.length) % categories.length;
+      categories[current].classList.add('active');
+    }
+    
+  </script>
+</body>
+</html>
